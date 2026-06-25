@@ -26,7 +26,7 @@ while cap.isOpened():
         break
         
     # Ekzekuto YOLO: classes=0 filtron vetëm njerëzit (këmbësorët)
-    results = model.predict(source=frame, device=device, conf=0.25, classes=0, verbose=False)
+    results = model.predict(source=frame, device=device, conf=0.25, classes=[0, 1], verbose=False)
     
     # Merr rezultatin e parë (pasi punojmë me një imazh të vetëm çdo herë)
     result = results[0]
